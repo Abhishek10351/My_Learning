@@ -1,0 +1,12 @@
+import pymongo
+from pymongo import MongoClient
+cluster = pymongo.MongoClient("mongodb+srv://Abhishek:Mongo123@cluster0.mso4l.mongodb.net/test?retryWrites=true&w=majority")
+#make a connection
+
+db = cluster.test
+collection = db.test
+# to connect to the db
+collection.insert_one({})
+collection.insert_many([])
+collection.find({})
+collection.find_one()

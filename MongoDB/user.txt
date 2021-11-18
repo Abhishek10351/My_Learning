@@ -1,0 +1,7 @@
+Abhishek
+Mongo123
+
+client = pymongo.MongoClient("mongodb+srv://<username>:<password>@cluster0.mso4l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = client.test
+
+print("rwgv")

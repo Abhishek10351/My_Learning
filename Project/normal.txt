@@ -1,0 +1,8 @@
+1 echo # used to create or rewrite files
+echo Some text < file1.txt # creates a file with given text
+echo New text << file1.txt # appends text to file
+2 code #opens the current dir in vs code
+3 mkdir <name> # makes dir with given name
+4 rm {name} #removes the file/folder from directory
+5 ls/dir # shows up the files in the dir
+6 mv #moves files (renames files if the dir is same)
