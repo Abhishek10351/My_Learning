@@ -64,3 +64,4 @@ m-n lines are shown from new
 
 
 # view commits
+git log # view history (latest to earliest)
