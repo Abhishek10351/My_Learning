@@ -1,8 +1,11 @@
 import pymongo 
 import threading
-cluster = pymongo.MongoClient(host="mongodb+srv://deep:1234abcd@cluster.ds3cv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-db = cluster['socialmedia']['messages']
-db_log = cluster['socialmedia']['log']
+from dotenv import load_dotenv
+from os import getenv
+load_dotenv()
+cluster = pymongo.MongoClient(getenv("client_details"))
+db = cluster.test
+collection = db.test
 a = {'alias': "Abhishek", 'message': "I am awesome"}
-db.insert_one(a)
-print("damn")
+collection.insert_one(a)
+

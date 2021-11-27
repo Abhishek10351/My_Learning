@@ -1,6 +1,6 @@
 import pymongo
 from pymongo import MongoClient
-cluster = pymongo.MongoClient("mongodb+srv://Abhishek:Mongo123@cluster0.mso4l.mongodb.net/test?retryWrites=true&w=majority")
+cluster = pymongo.MongoClient("mongodb+srv://Abhishek:Mongo123@cluster.mso4l.mongodb.net")
 #make a connection
 
 db = cluster.test
@@ -10,3 +10,4 @@ collection.insert_one({})
 collection.insert_many([])
 collection.find({})
 collection.find_one()
+prefixes.update_one({"_id":message.guild.id}, {"$set": {"prefix":new_prefix.strip()}})
