@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/addon/runmode/runmode-standalone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/mode/python/python.min.js"></script>
+    <img src="detective_pika.png">
+    
+</head>
+<body>
+    <p>Hello, I am Abhishek a  18 year old full&nbsp;stack developer from India</p>
+    <a href="mailto:abhik5567@gmail.com" target="_blank">Email me</a>
+    <a href="https:google.com" target="_blank">Google</a>
+    
+    <pre><code id="python_code">
+
+        class Account():
+        def __init__(self,owner:str,balance:float):
+            self.owner = owner 
+            self.balance = balance # imaginary numbers not allowed
+            if isinstance(balance,complex):
+                raise TypeError('Balance can only be in form of real numbers')
+        def __str__(self):
+            return(f'Account owner: {self.owner} \nAccount balance: {self.balance} $')
+        def deposit(self,dep_amount:float):
+            if dep_amount > 0 and not isinstance(dep_amount,complex):
+                self.balance += dep_amount
+                print(f'Deposited {dep_amount} $. Current balance is {self.balance} $')
+            else:
+                print(f'Invalid amount')
+        def withdraw(self,wd_amount:float):
+            if wd_amount > self.balance:
+                print('Funds Unavailable!')
+            else:
+                self.balance -= wd_amount
+                print(f'Withdrawal of {wd_amount} $ completed. Current balance is {self.balance} $')
+            </code>
+        </pre>
+        <script type="text/javascript">
+            window.onload = function(){
+                var codeElement = document.getElementById('python_code');
+                // Add code mirror class for coloring (default is the theme)
+                codeElement.classList.add( 'cm-s-default' );
+                var code = codeElement.innerText;
+    
+                codeElement.innerHTML = "";
+    
+                CodeMirror.runMode(
+                  code,
+                  'python',
+                  codeElement
+                );
+            };
+        </script>
+</body>
+</html>
