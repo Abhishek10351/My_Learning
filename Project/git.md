@@ -19,10 +19,11 @@ A - added
 M - modified but not in staging area yet
 R - renamed
 ?? - untracked
-green - ready to be commited
+green - ready to be committed
 red - files changed after
 
 3
+
 git add # adds the given files to staging area to commit later (removes the file from staging area if it is not found in dir)
 
 ## some styles to add files
@@ -32,27 +33,33 @@ file1.txt file2.txt
 . # adds all files except the ones gitignored
 
 4
+
 help
 git command --help # for full help/docs
 git command -h #just for a hint
 
 5
+
 git ls-files # shows the files git is tracking
 
 6
+
 git rm #removes files from working directory as well as staging area
 
 7
+
 git mv #moves files (renames files if the dir is same)
 
 8
+
 if a file is tracked already then gitignore might not work so we have to use
 git rm --cached <file/folder> which removes it from staging area once
 (-r for removing recursively i.e it it a folder)
 
 9
+
 git diff # used to check the change in exact lines of code we made
-git difftool # same thing but in vsc window
+git diff-tool # same thing but in vsc window
 (--staged for checking the files in the staging area)
 
 ## info for reading `git diff` messages
@@ -76,6 +83,7 @@ c-d lines are shown from old
 m-n lines are shown from new
 
 10
+
 git log # view history (latest to earliest)
  q - quit
  --oneline (shows everything in one line)
@@ -85,8 +93,11 @@ git log # view history (latest to earliest)
  11
 
  git show (open a particular commit)
- (HEAD~1) (for comparing the commit with the head)
+ (HEAD~1) (for comparing the commit with the head (the last commit))
  :path (shows the file data in that commit)
+ we can use the random id generated and shown in
 
  12
- git ls-tree
+
+ git ls-tree (shows the files and directories stored in a commit)
+ git ls-files (shows the files added )
