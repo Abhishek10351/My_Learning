@@ -1,8 +1,8 @@
 # basic git commands
 
-1
+## Configuring git
 
-git config # configures git as we need it
+* git config # configures git as we need it
 system - all users
 global - repo of current user
 local - current repo
@@ -12,8 +12,8 @@ git config --global core.editor "code --wait" # code -> vs code --wait -> wait f
 git config --global -e #opens the editor for changing all the configured settings
 git config --global diff.tool vscode # tells git that we will use vscode for git diff
 
-2
-
+*
+git init
 git status (-s for short) # used to check the status of the files in the repo
 A - added
 M - modified but not in staging area yet
@@ -22,9 +22,9 @@ R - renamed
 green - ready to be committed
 red - files changed after
 
-3
-
-git add # adds the given files to staging area to commit later (removes the file from staging area if it is not found in dir)
+*
+git add # adds the given files to staging area to commit later 
+(removes the file from staging area if it is not found in dir)
 
 ## some styles to add files
 
@@ -32,32 +32,30 @@ file1.txt file2.txt
 \*.txt #adds all files with .txt extension
 . # adds all files except the ones gitignored
 
-4
-
+*
 help
 git command --help # for full help/docs
 git command -h #just for a hint
 
-5
+*
 
 git ls-files # shows the files git is tracking
 
-6
+*
 
 git rm #removes files from working directory as well as staging area
 
-7
+*
 
 git mv #moves files (renames files if the dir is same)
 
-8
+*
 
 if a file is tracked already then gitignore might not work so we have to use
 git rm --cached <file/folder> which removes it from staging area once
 (-r for removing recursively i.e it it a folder)
 
-9
-
+*
 git diff # used to check the change in exact lines of code we made
 git diff-tool # same thing but in vsc window
 (--staged for checking the files in the staging area)
@@ -78,11 +76,11 @@ index ... (metadata - doesn't matter much to us)
 
 @@ -c,d +m,n @@  
 
-- indicates old file, + indicates new file
+-indicates old file, + indicates new file
 c-d lines are shown from old
 m-n lines are shown from new
 
-10
+*
 
 git log # view history (latest to earliest)
  q - quit
@@ -90,14 +88,22 @@ git log # view history (latest to earliest)
  space (next page)
  --reverse (reverse the sorting order)
 
- 11
+*
 
  git show (open a particular commit)
  (HEAD~1) (for comparing the commit with the head (the last commit))
  :path (shows the file data in that commit)
  we can use the random id generated and shown in
 
- 12
+*
 
  git ls-tree (shows the files and directories stored in a commit)
  git ls-files (shows the files added )
+
+*
+
+git restore path (to restore file to last commit version)
+
+git clean (to undo local changes)
+git revert
+git restore --source==HEAD~1 path ( restores files/dir to previous versions)
