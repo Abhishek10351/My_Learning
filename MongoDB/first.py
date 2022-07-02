@@ -9,7 +9,14 @@ collection = cluster.test.test
 print("watching")
 
 #a = collection.watch([{'$match': {'operationType': 'insert'}}])
-change_stream = cluster.changestream.collection.watch()
+def new_msg_check(self):
+    '''checks for new messages, and displays alert on the screen'''
+    db.watch([{'$match': {'operationType': 'insert'}}])
+    def get_messages() -> list:
+        """gets all the messages from the server """
+        for messages in db.find({}):
+            yield f"[{messages['alias']}]: {messages['message']}"
+    self.msg_box.setText("\n".join(get_messages()))
 for change in change_stream:
     print(change)
     print('')
